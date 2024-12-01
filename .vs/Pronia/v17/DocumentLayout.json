@@ -1,0 +1,213 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Victus\\source\\repos\\Pronio\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\source\\repos\\pronio\\pronio\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\source\\repos\\pronio\\pronio\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\source\\repos\\pronio\\pronio\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\source\\repos\\pronio\\pronio\\viewmodel\\productitemvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\viewmodel\\productitemvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\source\\repos\\pronio\\pronio\\viewmodel\\productupdatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\viewmodel\\productupdatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\source\\repos\\pronio\\pronio\\viewmodel\\sliderupdatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\viewmodel\\sliderupdatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\source\\repos\\pronio\\pronio\\areas\\admin\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\areas\\admin\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\source\\repos\\pronio\\pronio\\viewmodel\\common\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\viewmodel\\common\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\source\\repos\\pronio\\pronio\\areas\\admin\\views\\slider\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\areas\\admin\\views\\slider\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\source\\repos\\pronio\\pronio\\areas\\admin\\views\\product\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\areas\\admin\\views\\product\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\source\\repos\\pronio\\pronio\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\source\\repos\\pronio\\pronio\\areas\\admin\\controllers\\slidercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\areas\\admin\\controllers\\slidercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 205,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pronio\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Pronio\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAkwMsAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-01T01:27:20.511Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Pronio\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Pronio\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T01:22:20.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductItemVM.cs",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\ViewModel\\ProductItemVM.cs",
+              "RelativeDocumentMoniker": "Pronio\\ViewModel\\ProductItemVM.cs",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\ViewModel\\ProductItemVM.cs",
+              "RelativeToolTip": "Pronio\\ViewModel\\ProductItemVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T01:19:48.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HomeVM.cs",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\ViewModel\\Common\\HomeVM.cs",
+              "RelativeDocumentMoniker": "Pronio\\ViewModel\\Common\\HomeVM.cs",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\ViewModel\\Common\\HomeVM.cs",
+              "RelativeToolTip": "Pronio\\ViewModel\\Common\\HomeVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T01:19:03.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "RelativeDocumentMoniker": "Pronio\\Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "RelativeToolTip": "Pronio\\Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-01T00:49:11.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Pronio\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Models\\Product.cs",
+              "RelativeToolTip": "Pronio\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T00:45:19.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SliderUpdateVM.cs",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\ViewModel\\SliderUpdateVM.cs",
+              "RelativeDocumentMoniker": "Pronio\\ViewModel\\SliderUpdateVM.cs",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\ViewModel\\SliderUpdateVM.cs",
+              "RelativeToolTip": "Pronio\\ViewModel\\SliderUpdateVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T00:43:03.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductUpdateVM.cs",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\ViewModel\\ProductUpdateVM.cs",
+              "RelativeDocumentMoniker": "Pronio\\ViewModel\\ProductUpdateVM.cs",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\ViewModel\\ProductUpdateVM.cs",
+              "RelativeToolTip": "Pronio\\ViewModel\\ProductUpdateVM.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T00:32:02.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Update.cshtml",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Areas\\Admin\\Views\\Product\\Update.cshtml",
+              "RelativeDocumentMoniker": "Pronio\\Areas\\Admin\\Views\\Product\\Update.cshtml",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Areas\\Admin\\Views\\Product\\Update.cshtml",
+              "RelativeToolTip": "Pronio\\Areas\\Admin\\Views\\Product\\Update.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-01T00:20:44.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Update.cshtml",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Areas\\Admin\\Views\\Slider\\Update.cshtml",
+              "RelativeDocumentMoniker": "Pronio\\Areas\\Admin\\Views\\Slider\\Update.cshtml",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Areas\\Admin\\Views\\Slider\\Update.cshtml",
+              "RelativeToolTip": "Pronio\\Areas\\Admin\\Views\\Slider\\Update.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-01T00:20:17.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Pronio\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Pronio\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAuwHAAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T13:03:38.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SliderController.cs",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Areas\\Admin\\Controllers\\SliderController.cs",
+              "RelativeDocumentMoniker": "Pronio\\Areas\\Admin\\Controllers\\SliderController.cs",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\Pronio\\Pronio\\Areas\\Admin\\Controllers\\SliderController.cs",
+              "RelativeToolTip": "Pronio\\Areas\\Admin\\Controllers\\SliderController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAgwD4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T11:35:58.781Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
