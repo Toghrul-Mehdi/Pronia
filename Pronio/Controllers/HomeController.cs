@@ -31,16 +31,18 @@ namespace Pronio.Controllers
                     Price = x.SellPrice,
                     Discount = x.Discount,
                     IsInStock = x.Quantity > 0,
-
+                    CategoryID = x.CategoryID
                 }).ToListAsync();
             vm.Categories = await _context.Categories
                 .Where(x => !x.IsDeleted)
                 .Select(x => new CategoryItemVM
                 {
+                    Id=x.Id,
                     CategoryName = x.CategoryName,
                 }).ToListAsync();
             return View(vm);
         }    
+        
 
         
     }

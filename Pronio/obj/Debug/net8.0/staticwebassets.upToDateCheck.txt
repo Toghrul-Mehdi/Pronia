@@ -1992,8 +1992,13 @@ wwwroot\images\website-images\card.png
 wwwroot\images\website-images\dark.png
 wwwroot\images\website-images\quotation.png
 wwwroot\images\website-images\service.png
+wwwroot\img\products\1sibvfm2.5kj.jpg
 wwwroot\img\products\filspyxe.ydy.jpg
+wwwroot\img\products\i33okr4l.at0.webp
+wwwroot\img\products\kebqxexa.4w5.jpg
+wwwroot\img\products\kwvsglvc.uhq.jpg
 wwwroot\img\products\nl1f0bbt.5wr.jpg
+wwwroot\img\products\vm1t5yuy.ht0.jpg
 wwwroot\img\sliders\1g41ge4p.kdc.png
 wwwroot\img\sliders\dmb2ycef.t1a.webp
 wwwroot\img\sliders\zdjse0ep.sq2.jpg

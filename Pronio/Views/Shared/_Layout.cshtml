@@ -1164,6 +1164,37 @@
     <script src="~/js/plugins/ion.rangeSlider.min.js"></script>
     <script src="~/js/plugins/mailchimp-ajax.js"></script>
     <script src="~/js/plugins/jquery.counterup.js"></script>
+    @RenderSection("Scripts", required: false)           
+    
+        <script>
+
+                document.querySelectorAll('.nav-link').forEach(tab => {
+            tab.addEventListener('click', function(event) {
+                // Tüm ürünleri gizle
+                const allProducts = document.querySelectorAll('.product-item');
+                allProducts.forEach(product => {
+                    product.style.display = 'none';
+                });
+
+                // Seçilen kategorinin ürünlerini göster
+                const categoryId = event.target.getAttribute('href').replace('#tab-', '');
+
+                // "All" sekmesine tıklanırsa tüm ürünleri göster
+                if (categoryId === "all") {
+                    allProducts.forEach(product => {
+                        product.style.display = 'block';
+                    });
+                }
+                else {
+                    const selectedCategoryProducts = document.querySelectorAll(`.product-item[data-category='${categoryId}']`);
+                    selectedCategoryProducts.forEach(product => {
+                        product.style.display = 'block';
+                    });
+                }
+            });
+        });
+        </script>
+    
 
     <!--Main JS (Common Activation Codes)-->
     <script src="~/js/main.js"></script>
