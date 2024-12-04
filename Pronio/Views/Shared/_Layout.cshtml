@@ -106,50 +106,23 @@
 
                                 <div class="header-right">
                                     <ul>
-                                        <li>
-                                            <a href="#exampleModal"
-                                               class="search-btn bt"
-                                               data-bs-toggle="modal"
-                                               data-bs-target="#exampleModal">
-                                                <i class="pe-7s-search"></i>
-                                            </a>
-                                        </li>
-                                        <li class="dropdown d-none d-lg-block">
-                                            <button class="btn btn-link dropdown-toggle ht-btn p-0"
-                                                    type="button"
-                                                    id="settingButton"
-                                                    data-bs-toggle="dropdown"
-                                                    aria-label="setting"
-                                                    aria-expanded="false">
-                                                <i class="pe-7s-users"></i>
-                                            </button>
-                                            <ul class="dropdown-menu"
-                                                aria-labelledby="settingButton">
-                                                <li>
-                                                    <a class="dropdown-item" href="my-account.html">My account</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="login-register.html">Login | Register</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="d-none d-lg-block">
-                                            <a href="wishlist.html">
-                                                <i class="pe-7s-like"></i>
-                                            </a>
-                                        </li>
-                                        <li class="minicart-wrap me-3 me-lg-0">
-                                            <a href="#miniCart" class="minicart-btn toolbar-btn">
-                                                <i class="pe-7s-shopbag"></i>
-                                                <span class="quantity">3</span>
-                                            </a>
-                                        </li>
-                                        <li class="mobile-menu_wrap d-block d-lg-none">
-                                            <a href="#mobileMenu"
-                                               class="mobile-menu_btn toolbar-btn pl-0">
-                                                <i class="pe-7s-menu"></i>
-                                            </a>
-                                        </li>
+                                        @if(Context.User.Identity?.IsAuthenticated==true){
+                                            <li>
+                                                <a asp-action="Logout" asp-controller="Account">
+                                                    Exit
+                                                </a>
+                                                
+                                            </li>                                           
+                                        }
+                                        else{
+                                            <li>
+                                                <a asp-action="Login" asp-controller="Account">
+                                                   Login
+                                                </a>
+
+                                            </li>
+                                        }
+
                                     </ul>
                                 </div>
                             </div>
@@ -1164,37 +1137,7 @@
     <script src="~/js/plugins/ion.rangeSlider.min.js"></script>
     <script src="~/js/plugins/mailchimp-ajax.js"></script>
     <script src="~/js/plugins/jquery.counterup.js"></script>
-    @RenderSection("Scripts", required: false)           
-    
-        <script>
-
-                document.querySelectorAll('.nav-link').forEach(tab => {
-            tab.addEventListener('click', function(event) {
-                // Tüm ürünleri gizle
-                const allProducts = document.querySelectorAll('.product-item');
-                allProducts.forEach(product => {
-                    product.style.display = 'none';
-                });
-
-                // Seçilen kategorinin ürünlerini göster
-                const categoryId = event.target.getAttribute('href').replace('#tab-', '');
-
-                // "All" sekmesine tıklanırsa tüm ürünleri göster
-                if (categoryId === "all") {
-                    allProducts.forEach(product => {
-                        product.style.display = 'block';
-                    });
-                }
-                else {
-                    const selectedCategoryProducts = document.querySelectorAll(`.product-item[data-category='${categoryId}']`);
-                    selectedCategoryProducts.forEach(product => {
-                        product.style.display = 'block';
-                    });
-                }
-            });
-        });
-        </script>
-    
+   
 
     <!--Main JS (Common Activation Codes)-->
     <script src="~/js/main.js"></script>

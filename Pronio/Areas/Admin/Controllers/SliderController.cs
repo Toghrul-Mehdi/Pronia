@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using Pronia.DataAccess;
@@ -8,6 +9,7 @@ using Pronio.Models;
 namespace Pronia.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class SliderController(AppDbContext _context, IWebHostEnvironment _env) : Controller
     {
         public async Task<IActionResult> Index()
