@@ -33,7 +33,7 @@ namespace Pronia.Controllers
                 }
                 return View();
             }
-            return View();
+            return RedirectToAction(nameof(Login));
         }
 
         public async Task<IActionResult> Login()
@@ -44,7 +44,7 @@ namespace Pronia.Controllers
         [HttpPost]
 
 
-        public async Task<IActionResult> Login(LoginVM vm)
+        public async Task<IActionResult> Login(LoginVM vm,string? returnUrl)
         {
             if (!ModelState.IsValid) return View();
             User? user = null;
@@ -74,7 +74,14 @@ namespace Pronia.Controllers
                 }
                 return View();
             }
-            return RedirectToAction("Index", "Home");
+            if (string.IsNullOrEmpty(returnUrl))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return LocalRedirect(returnUrl);
+            }
         }
 
 

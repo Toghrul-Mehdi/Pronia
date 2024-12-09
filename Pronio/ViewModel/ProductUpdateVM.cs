@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Pronia.ViewModel.Common;
+using System.ComponentModel.DataAnnotations;
 
 namespace Pronia.ViewModel
 {
@@ -18,8 +19,11 @@ namespace Pronia.ViewModel
         public int Discount { get; set; }
         
         public string ImageUrl { get; set; }
+
+        public IEnumerable<ImageUrlAndId>? ImageUrls { get; set; }
         
         public IFormFile? CoverImage { get; set; }
+        public IEnumerable<IFormFile>? CoverImages { get; set; }
         [Required]
         public int CategoryID { get; set; }
     }

@@ -17,7 +17,7 @@ namespace Pronio.Controllers
             vm.Sliders = await _context.Sliders
                 .Where(x => !x.IsDeleted)
                 .Select(x => new SliderItemVM
-                {
+                {                    
                     ImageUrl = x.ImageUrl,
                     Subtitle = x.Subtitle,
                     Title = x.Title,
@@ -26,6 +26,7 @@ namespace Pronio.Controllers
                 .Where(x => !x.IsDeleted)
                 .Select(x => new ProductItemVM
                 {
+                    Id = x.Id,
                     ImageUrl = x.CoverImage,
                     Name = x.ProductName,
                     Price = x.SellPrice,

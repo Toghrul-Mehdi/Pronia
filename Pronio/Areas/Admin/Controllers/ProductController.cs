@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pronia.DataAccess;
+using Pronia.Extension;
 using Pronia.Models;
 using Pronia.ViewModel;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Pronia.Areas.Admin.Controllers
 {
@@ -37,19 +39,31 @@ namespace Pronia.Areas.Admin.Controllers
                     ModelState.AddModelError("File", "File must be less than 5mb!");
                 }
             }
+            if (vm.OtherFiles != null && vm.OtherFiles.Any())
+            {
+                if (!vm.OtherFiles.All(x => x.ContentType.StartsWith("image")))
+                {
+                    string fileNames = string.Join(',', vm.OtherFiles
+                        .Where(x => !x.ContentType.StartsWith("image"))
+                        .Select(x => x.FileName));
+                    ModelState.AddModelError("OtherFiles", fileNames + " is (are) not an image.");
+                }
+                if (!vm.OtherFiles.All(x => x.Length <= 5 * 1024 * 1024))
+                {
+                    string fileNames = string.Join(',', vm.OtherFiles
+                        .Where(x => x.Length > 5 * 1024 * 1024)
+                        .Select(x => x.FileName));
+                    ModelState.AddModelError("OtherFiles", fileNames + " is (are) bigger than 5MB.");
+                }
+            }
             if (!ModelState.IsValid)
             {
                 ViewBag.Categories = await _context.Categories.Where(x => !x.IsDeleted).ToListAsync();
                 return View();
             }
-            string newFileName = Path.GetRandomFileName() + Path.GetExtension(vm.CoverImage.FileName);
-            using(Stream sr = System.IO.File.Create(Path.Combine(_env.WebRootPath, "img", "products", newFileName)))
-            {
-                await vm.CoverImage.CopyToAsync(sr);
-            }
+
             Product product = new Product
-            {
-                CoverImage = newFileName,
+            {                
                 ProductName = vm.ProductName,
                 ProductDescription = vm.ProductDescription,
                 CostPrice = vm.CostPrice,
@@ -57,6 +71,11 @@ namespace Pronia.Areas.Admin.Controllers
                 Discount = vm.Discount,
                 Quantity = vm.Quantity,
                 CategoryID = vm.CategoryID,
+                CoverImage = await vm.CoverImage!.UploadAsync(_env.WebRootPath, "img", "products"),
+                Images = vm.OtherFiles.Select(x => new ProductImages
+                {
+                    ImageUrl = x.UploadAsync(_env.WebRootPath, "img", "products").Result
+                }).ToList()
             };
             await _context.Products.AddAsync(product);
             await _context.SaveChangesAsync();
@@ -106,7 +125,12 @@ namespace Pronia.Areas.Admin.Controllers
                     Discount = x.Discount,
                     Quantity = x.Quantity,
                     CategoryID = x.CategoryID,
-                    ImageUrl=x.CoverImage
+                    ImageUrl=x.CoverImage,
+                    ImageUrls = x.Images.Select(y=> new ViewModel.Common.ImageUrlAndId
+                    {
+                        Id = y.Id,
+                        Url = y.ImageUrl
+                    })
                 }).FirstOrDefaultAsync();
             if(data is null) return NotFound();
             return View(data);
@@ -122,6 +146,7 @@ namespace Pronia.Areas.Admin.Controllers
                 if (vm.CoverImage.Length > 5 * 1024 * 1024)
                     ModelState.AddModelError("File", "File must be less than 5mb");
             }
+
             if (!ModelState.IsValid)
             {
                 ViewBag.Categories = await _context.Categories.Where(x => !x.IsDeleted).ToListAsync();
@@ -139,6 +164,7 @@ namespace Pronia.Areas.Admin.Controllers
                     await vm.CoverImage!.CopyToAsync(sr);
                 }
             }
+            
             products.ProductName=vm.ProductName;
             products.ProductDescription=vm.ProductDescription;
             products.CostPrice=vm.CostPrice;
@@ -149,5 +175,21 @@ namespace Pronia.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+
+       /* public async Task<IActionResult> DeleteImage(int? Id)
+        {
+            if (!Id.HasValue) return BadRequest();
+            var img =  await _context.ProductImages.FindAsync(Id.Value);
+            if(img == null) return NotFound();
+            _context.ProductImages.Remove(img); 
+            await _context.SaveChangesAsync();
+            string path = Path.Combine(_env.WebRootPath, "img", "products", img.ImageUrl);
+            if (Path.Exists(path))
+            {
+                System.IO.File.Delete(path);
+            }
+            return Ok();
+        }*/
     }
 }

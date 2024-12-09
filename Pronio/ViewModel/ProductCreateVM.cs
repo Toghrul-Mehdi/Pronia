@@ -17,7 +17,9 @@ namespace Pronia.ViewModel
         [Required]
         public int Discount { get; set; }
         [Required]
-        public IFormFile CoverImage { get; set; } = null!;
+        public IFormFile? CoverImage { get; set; }
+
+        public ICollection<IFormFile>? OtherFiles { get; set; }
         [Required]
         public int CategoryID { get; set; }
     }
