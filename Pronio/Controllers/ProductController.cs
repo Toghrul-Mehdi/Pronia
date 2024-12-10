@@ -29,6 +29,7 @@ namespace Pronia.Controllers
             Comment comment = new Comment
             {
                 
+
                 Comments = vm.Comment                
                 
             };

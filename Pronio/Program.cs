@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Pronia.DataAccess;
+using Pronia.Helpers;
 using Pronia.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +20,14 @@ builder.Services.AddIdentity<User, IdentityRole>(opt =>
     opt.Lockout.MaxFailedAccessAttempts = 1;
     opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
 }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+
+SmtpOptions opt = new();
+builder.Services.Configure<SmtpOptions>(builder.Configuration.GetSection("Smtp"));
+
+builder.Services.Configure<DataProtectionTokenProviderOptions>(options =>
+{
+    options.TokenLifespan = TimeSpan.FromHours(3);
+});
 
 var app = builder.Build();
 

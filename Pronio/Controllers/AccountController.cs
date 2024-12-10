@@ -1,12 +1,18 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using NuGet.Common;
+using Pronia.Helpers;
 using Pronia.Models;
 using Pronia.ViewModel.Auths;
+using System.Net;
+using System.Net.Mail;
 
 namespace Pronia.Controllers
 {
-    public class AccountController(UserManager<User> userManager,SignInManager<User> signInManager) : Controller
+    public class AccountController(UserManager<User> userManager,SignInManager<User> signInManager,IOptions<SmtpOptions> options) : Controller
     {
+        readonly SmtpOptions _smtp = options.Value;
         public IActionResult Register()
         {
             return View();
@@ -90,6 +96,90 @@ namespace Pronia.Controllers
             await signInManager.SignOutAsync();
             return RedirectToAction(nameof(Login));
         }
-        
+
+
+        public async Task<IActionResult> ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword(string email)
+        {
+            var user = await userManager.FindByEmailAsync(email);
+            if (user == null)
+            {
+                return BadRequest("E-posta tapilmadi.");
+            }
+
+            var token = await userManager.GeneratePasswordResetTokenAsync(user);
+            var encodedToken = WebUtility.UrlEncode(token);
+            var resetLink = Url.Action(
+                action: "ResetPassword",
+                controller: "Account",
+                values: new { token = encodedToken, email = user.Email },
+                protocol: Request.Scheme);
+
+            SmtpClient smtp = new SmtpClient
+            {
+                Host = _smtp.Host,
+                Port = _smtp.Port,
+                EnableSsl = true,
+                Credentials = new NetworkCredential(_smtp.Username, _smtp.Password)
+            };
+
+            MailMessage msg = new MailMessage
+            {
+                From = new MailAddress(_smtp.Username, "Togrul Mehdiyev CodeAcademy"),
+                Subject = "Reset Password",
+                Body = $"<p>Şifrenizi sıfırlamak için <a href='{resetLink}'>bu bağlantıya</a> tıklayın.</p>",
+                IsBodyHtml = true
+            };
+            msg.To.Add(email);
+
+            return Ok("Emaile gonderildi");
+
+
+        }
+
+        public IActionResult ResetPassword(string token, string email)
+        {
+            if (string.IsNullOrEmpty(token) || string.IsNullOrEmpty(email))
+            {
+                return BadRequest("Invalid Connection");
+            }
+
+            return View(new ResetPasswordVM { Token = token, Email = email });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword(ResetPasswordVM vm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(vm);
+            }
+
+            var user = await userManager.FindByEmailAsync(vm.Email);
+            if (user == null)
+            {
+                return BadRequest("Istifadeci tapilmadi");
+            }
+
+            var resetPassResult = await userManager.ResetPasswordAsync(user, vm.Token, vm.NewPassword);
+            if (resetPassResult.Succeeded)
+            {
+                return RedirectToAction("ResetPasswordConfirmation");
+            }
+
+            foreach (var error in resetPassResult.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+
+            return View(vm);
+        }
+
+
     }
 }
