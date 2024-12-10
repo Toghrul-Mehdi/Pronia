@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Victus\\OneDrive\\\u0130\u015F masas\u0131\\Codecademy\\Pronio\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\onedrive\\\u0130\u015F masas\u0131\\codecademy\\pronio\\pronio\\areas\\admin\\views\\product\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\areas\\admin\\views\\product\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\onedrive\\\u0130\u015F masas\u0131\\codecademy\\pronio\\pronio\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\onedrive\\\u0130\u015F masas\u0131\\codecademy\\pronio\\pronio\\models\\productimages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\models\\productimages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\onedrive\\\u0130\u015F masas\u0131\\codecademy\\pronio\\pronio\\areas\\admin\\views\\product\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|solutionrelative:pronio\\areas\\admin\\views\\product\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{78470C73-1A94-409C-A4FB-7EABE5CCC555}|Pronio\\Pronia.csproj|c:\\users\\victus\\onedrive\\\u0130\u015F masas\u0131\\codecademy\\pronio\\pronio\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -82,11 +82,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 205,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\Victus\\OneDrive\\\u0130\u015F masas\u0131\\Codecademy\\Pronio\\Pronio\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Pronio\\Models\\Product.cs",
@@ -98,28 +98,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Update.cshtml",
               "DocumentMoniker": "C:\\Users\\Victus\\OneDrive\\\u0130\u015F masas\u0131\\Codecademy\\Pronio\\Pronio\\Areas\\Admin\\Views\\Product\\Update.cshtml",
               "RelativeDocumentMoniker": "Pronio\\Areas\\Admin\\Views\\Product\\Update.cshtml",
               "ToolTip": "C:\\Users\\Victus\\OneDrive\\\u0130\u015F masas\u0131\\Codecademy\\Pronio\\Pronio\\Areas\\Admin\\Views\\Product\\Update.cshtml",
               "RelativeToolTip": "Pronio\\Areas\\Admin\\Views\\Product\\Update.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAEwAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAAAEoAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-07T23:22:35.647Z"
+              "WhenOpened": "2024-12-07T23:22:35.647Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\Victus\\OneDrive\\\u0130\u015F masas\u0131\\Codecademy\\Pronio\\Pronio\\Areas\\Admin\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Pronio\\Areas\\Admin\\Controllers\\ProductController.cs",
               "ToolTip": "C:\\Users\\Victus\\OneDrive\\\u0130\u015F masas\u0131\\Codecademy\\Pronio\\Pronio\\Areas\\Admin\\Controllers\\ProductController.cs",
               "RelativeToolTip": "Pronio\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAlwHgAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAlwH4AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T18:16:05.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-07T18:16:05.315Z"
             },
             {
               "$type": "Document",
@@ -135,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\Victus\\OneDrive\\\u0130\u015F masas\u0131\\Codecademy\\Pronio\\Pronio\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Pronio\\Controllers\\ProductController.cs",
@@ -147,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Victus\\OneDrive\\\u0130\u015F masas\u0131\\Codecademy\\Pronio\\Pronio\\Views\\Product\\Details.cshtml",
               "RelativeDocumentMoniker": "Pronio\\Views\\Product\\Details.cshtml",
@@ -155,12 +155,11 @@
               "RelativeToolTip": "Pronio\\Views\\Product\\Details.cshtml",
               "ViewState": "AgIAACcBAAAAAAAAAAAAwB8BAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-07T16:33:47.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-07T16:33:47.983Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ProductImages.cs",
               "DocumentMoniker": "C:\\Users\\Victus\\OneDrive\\\u0130\u015F masas\u0131\\Codecademy\\Pronio\\Pronio\\Models\\ProductImages.cs",
               "RelativeDocumentMoniker": "Pronio\\Models\\ProductImages.cs",
@@ -172,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Victus\\OneDrive\\\u0130\u015F masas\u0131\\Codecademy\\Pronio\\Pronio\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Pronio\\Controllers\\HomeController.cs",
