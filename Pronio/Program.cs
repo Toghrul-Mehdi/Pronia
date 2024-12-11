@@ -26,7 +26,7 @@ builder.Services.Configure<SmtpOptions>(builder.Configuration.GetSection("Smtp")
 
 builder.Services.Configure<DataProtectionTokenProviderOptions>(options =>
 {
-    options.TokenLifespan = TimeSpan.FromHours(3);
+    options.TokenLifespan = TimeSpan.FromHours(24);
 });
 
 var app = builder.Build();

@@ -112,13 +112,12 @@ namespace Pronia.Controllers
                 return BadRequest("E-posta tapilmadi.");
             }
 
-            var token = await userManager.GeneratePasswordResetTokenAsync(user);
-            var encodedToken = WebUtility.UrlEncode(token);
+            var token = await userManager.GeneratePasswordResetTokenAsync(user); 
             var resetLink = Url.Action(
                 action: "ResetPassword",
                 controller: "Account",
-                values: new { token = encodedToken, email = user.Email },
-                protocol: Request.Scheme);
+                values: new { token, email = user.Email },
+                protocol: "https");
 
             SmtpClient smtp = new SmtpClient
             {
@@ -136,6 +135,8 @@ namespace Pronia.Controllers
                 IsBodyHtml = true
             };
             msg.To.Add(email);
+
+            smtp.Send(msg);
 
             return Ok("Emaile gonderildi");
 
@@ -169,7 +170,7 @@ namespace Pronia.Controllers
             var resetPassResult = await userManager.ResetPasswordAsync(user, vm.Token, vm.NewPassword);
             if (resetPassResult.Succeeded)
             {
-                return RedirectToAction("ResetPasswordConfirmation");
+                return Ok("Hershey ugurla tamamlandi");
             }
 
             foreach (var error in resetPassResult.Errors)
