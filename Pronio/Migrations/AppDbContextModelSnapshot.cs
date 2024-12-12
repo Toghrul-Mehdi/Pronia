@@ -211,67 +211,23 @@ namespace Pronia.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("Comments");
-                });
-
-            modelBuilder.Entity("Pronia.Models.CommentProduct", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("Like")
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CommentId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("CommentId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("CommentProducts");
-                });
-
-            modelBuilder.Entity("Pronia.Models.CommentUser", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CommentId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CommentId");
+                    b.HasIndex("ProductId");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("CommentUsers");
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("Pronia.Models.Product", b =>
@@ -571,38 +527,21 @@ namespace Pronia.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Pronia.Models.CommentProduct", b =>
+            modelBuilder.Entity("Pronia.Models.Comment", b =>
                 {
-                    b.HasOne("Pronia.Models.Comment", "Comment")
-                        .WithMany("CommentProducts")
-                        .HasForeignKey("CommentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Pronia.Models.Product", "Product")
-                        .WithMany("CommentProducts")
+                        .WithMany("Comments")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Comment");
-
-                    b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("Pronia.Models.CommentUser", b =>
-                {
-                    b.HasOne("Pronia.Models.Comment", "Comment")
-                        .WithMany("CommentUsers")
-                        .HasForeignKey("CommentId")
+                    b.HasOne("Pronia.Models.User", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Pronia.Models.User", "User")
-                        .WithMany("CommentUsers")
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("Comment");
+                    b.Navigation("Product");
 
                     b.Navigation("User");
                 });
@@ -649,16 +588,9 @@ namespace Pronia.Migrations
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("Pronia.Models.Comment", b =>
-                {
-                    b.Navigation("CommentProducts");
-
-                    b.Navigation("CommentUsers");
-                });
-
             modelBuilder.Entity("Pronia.Models.Product", b =>
                 {
-                    b.Navigation("CommentProducts");
+                    b.Navigation("Comments");
 
                     b.Navigation("Images");
 
@@ -667,7 +599,7 @@ namespace Pronia.Migrations
 
             modelBuilder.Entity("Pronia.Models.User", b =>
                 {
-                    b.Navigation("CommentUsers");
+                    b.Navigation("Comments");
 
                     b.Navigation("ProductRatings");
                 });

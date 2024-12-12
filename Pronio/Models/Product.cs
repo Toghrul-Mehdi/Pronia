@@ -14,6 +14,6 @@
         public ICollection<ProductImages>? Images { get; set; }
         public ICollection<ProductRatings>? ProductRatings { get; set; }
         public ICollection<Tag>? Tags { get; set; }
-        public ICollection<CommentProduct> CommentProducts { get; set; }
+        public ICollection<Comment> Comments { get; set; }
     }
 }

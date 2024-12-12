@@ -15,7 +15,6 @@ namespace Pronia.DataAccess
         public DbSet<ProductRatings> ProductRatings { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        public DbSet<CommentUser> CommentUsers { get; set; }
-        public DbSet<CommentProduct> CommentProducts { get; set; }
+        
     }
 }
