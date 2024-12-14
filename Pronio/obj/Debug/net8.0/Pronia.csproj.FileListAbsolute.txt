@@ -506,9 +506,7 @@ C:\Users\Victus\OneDrive\İş masası\Codecademy\Pronio\Pronio\obj\Debug\net8.0\
 C:\Users\Victus\OneDrive\İş masası\Codecademy\Pronio\Pronio\obj\Debug\net8.0\Pronia.RazorAssemblyInfo.cache
 C:\Users\Victus\OneDrive\İş masası\Codecademy\Pronio\Pronio\obj\Debug\net8.0\Pronia.RazorAssemblyInfo.cs
 C:\Users\Victus\OneDrive\İş masası\Codecademy\Pronio\Pronio\obj\Debug\net8.0\Pronia.sourcelink.json
-C:\Users\Victus\OneDrive\İş masası\Codecademy\Pronio\Pronio\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Victus\OneDrive\İş masası\Codecademy\Pronio\Pronio\obj\Debug\net8.0\scopedcss\bundle\Pronia.styles.css
-C:\Users\Victus\OneDrive\İş masası\Codecademy\Pronio\Pronio\obj\Debug\net8.0\scopedcss\projectbundle\Pronia.bundle.scp.css
 C:\Users\Victus\OneDrive\İş masası\Codecademy\Pronio\Pronio\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Victus\OneDrive\İş masası\Codecademy\Pronio\Pronio\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Victus\OneDrive\İş masası\Codecademy\Pronio\Pronio\obj\Debug\net8.0\staticwebassets.build.endpoints.json

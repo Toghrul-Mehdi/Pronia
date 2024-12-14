@@ -2039,6 +2039,9 @@ wwwroot\img\sliders\dmb2ycef.t1a.webp
 wwwroot\img\sliders\g10k0154.bcz.png
 wwwroot\img\sliders\pf0fkwox.wy2.webp
 wwwroot\img\sliders\zdjse0ep.sq2.jpg
+wwwroot\img\users\samir1.jpg
+wwwroot\img\users\togrul1.jpg
+wwwroot\img\users\turan1.jpg
 wwwroot\js\main.js
 wwwroot\js\plugins.min.js
 wwwroot\js\plugins\ion.rangeSlider.min.js

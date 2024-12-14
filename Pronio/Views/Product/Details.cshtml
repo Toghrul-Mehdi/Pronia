@@ -2,13 +2,15 @@
 @model Product
 @{
     ViewData["Title"] = Model.ProductName;
-    int CommentCount = 0;
+}
+@section styles{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 }
 <!-- Begin Main Content Area  -->
 <main class="main-content">
     <div
     class="breadcrumb-area breadcrumb-height"
-    data-bg-image="assets/images/breadcrumb/bg/1-1-1919x388.jpg"
+    data-bg-image="images/breadcrumb/bg/1-1-1919x388.jpg"
     >
         <div class="container h-100">
             <div class="row h-100">
@@ -124,12 +126,10 @@
                                     />
                                 </div>
                             </li>
-                            <li class="add-to-cart">
-                                <a
-                                class="btn btn-custom-size lg-size btn-pronia-primary"
-                                href="cart.html"
-                                >Add to cart</a
-                                >
+                            <li   class="add-to-cart">
+                                <a prod-id="@Model.Id"
+                                class="btn btn-custom-size lg-size btn-pronia-primary"                               
+                                   > Add to cart</a>
                             </li>
                             <li class="wishlist-btn-wrap">
                                 <a class="custom-circle-btn" href="wishlist.html">
@@ -268,18 +268,17 @@
                                     <div class="blog-comment mt-0">
                                        
                                         <div class="blog-comment-item">
-                                            <div class="blog-comment-img">
-                                                <img src="~/images/website-images/1-1-120x120.webp"
+                                            <div class="blog-comment-img" @* style="width: 50px; height: 50px; overflow: hidden; border-radius: 50%; display: inline-block;" *@>
+                                                <img  src="~/img/users/@item.User.ProfileImageUrl"
                                                      alt="User Image" />
                                             </div>
                                             <div class="blog-comment-content">
                                                 <div class="user-meta">
                                                     <h2 class="user-name">@item.User.Fullname</h2>
-                                                    <span class="date">21 July 2021</span>
+                                                    <span class="date">@item.CreatedTime</span>
                                                 </div>
                                                 <p class="user-comment">
                                                     @item.Comments
-                                                <a class="btn btn-custom-size comment-btn" href="#">Reply</a>
                                             </div>
                                         </div>
 
@@ -295,7 +294,12 @@
                                         <input type="hidden" name="productId" value="@Model.Id" />
                                     </div>
                                     <div class="form-group">
-                                        <textarea name="Comment" placeholder="Write your review"></textarea>
+                                        <h2>Comment</h2>
+                                        <textarea name="Comment" placeholder="Write your review"
+                                                  style="width: 100%; height: 150px; padding: 10px; font-size: 14px;
+           border: 1px solid #ccc; border-radius: 5px; resize: vertical;
+           outline: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    </textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary" asp-action="Comment" asp-controller="Product">Submit</button>
                                 </form>
@@ -668,4 +672,39 @@
         <!-- Product Area End Here -->
       </main>
       <!-- Main Content Area End Here  -->
+
+      @section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      
+          <script>  
+        $('a.btn.btn-custom-size.lg-size.btn-pronia-primary').click(function(){
+                  fetch('/Product/AddBasket/'+$(this).attr('prod-id'))
+                  .then(x=>{
+                      if(x.ok)
+                      { 
+                                  Command: toastr["success"]("Məhsul səbətə əlavə olundu")
+
+        toastr.options = {
+          "closeButton": false,
+          "debug": false,
+          "newestOnTop": false,
+          "progressBar": false,
+          "positionClass": "toast-top-right",
+          "preventDuplicates": false,
+          "onclick": null,
+          "showDuration": "300",
+          "hideDuration": "1000",
+          "timeOut": "5000",
+          "extendedTimeOut": "1000",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"
+        }
+                      }
+                  })
+              })
+        
+          </script>
+      }
 

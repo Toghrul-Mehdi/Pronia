@@ -3,7 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Pronia.DataAccess;
 using Pronia.Models;
 using Pronia.ViewModel;
+using Pronia.ViewModel.Basket;
 using System.Security.Claims;
+using System.Text.Json;
 
 namespace Pronia.Controllers
 {
@@ -50,6 +52,43 @@ namespace Pronia.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Details), new { Id = productId });
+        }
+
+
+        public async Task<IActionResult> AddBasket(int id)
+        {
+            var basketItems = JsonSerializer.Deserialize<List<BasketProductItemVM>>(Request.Cookies["basket"] ?? "[]");
+
+            var item  = basketItems.FirstOrDefault(x=>x.Id == id);
+            if (item == null)
+            {
+                item = new BasketProductItemVM(id);
+                basketItems.Add(item);
+            }
+            item.Count++;
+            Response.Cookies.Append("basket", JsonSerializer.Serialize(basketItems));
+
+            return RedirectToAction(nameof(Details), new {Id = id});
+        }
+
+
+        public async Task<IActionResult> DeleteBasket(int id)
+        {
+            var basketItems = JsonSerializer.Deserialize<List<BasketProductItemVM>>(Request.Cookies["basket"] ?? "[]");
+
+            var item = basketItems!.FirstOrDefault(x => x.Id == id);
+            if (item!.Count>1)
+            {                
+                item.Count--;
+            }
+            else
+            {
+                basketItems!.Remove(item);
+            }
+            
+            Response.Cookies.Append("basket", JsonSerializer.Serialize(basketItems));
+
+            return RedirectToAction(nameof(Details), new { Id = id });
         }
     }
 
