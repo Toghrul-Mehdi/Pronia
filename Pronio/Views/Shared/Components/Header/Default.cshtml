@@ -664,7 +664,7 @@
                         @foreach (var item in Model)
                         {
                             <li  class="minicart-product">
-                                <a class="product-item_remove deletebasket" @* asp-action="DeleteBasket" asp-controller="Product" asp-route-id="@item.Id" *@>
+                                <a class="product-item_remove deletebasket" asp-action="DeleteBasket"  asp-route-id="@item.Id">
                                     <i class="pe-7s-close"
                                     data-tippy="Remove"
                                     data-tippy-inertia="true"

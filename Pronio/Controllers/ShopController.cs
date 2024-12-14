@@ -1,12 +1,73 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
+using Pronia.DataAccess;
+using Pronia.ViewModel;
+using Pronia.ViewModel.Basket;
+using Pronia.ViewModel.Common;
+using System.Text.Json;
 
 namespace Pronia.Controllers
 {
-    public class ShopController : Controller
+    public class ShopController(AppDbContext _context) : Controller
     {
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            HomeVM vm = new HomeVM();
+            vm.Products = await _context.Products
+                .Where(x => !x.IsDeleted)
+                .Select(x => new ProductItemVM
+                {
+                    Id = x.Id,
+                    ImageUrl = x.CoverImage,
+                    Name = x.ProductName,
+                    Price = x.SellPrice,
+                    Discount = x.Discount,
+                    IsInStock = x.Quantity > 0,
+                    CategoryID = x.CategoryID
+                }).ToListAsync();
+            vm.Categories = await _context.Categories
+                .Where(x => !x.IsDeleted)
+                .Select(x => new CategoryItemVM
+                {
+                    Id = x.Id,
+                    CategoryName = x.CategoryName,
+                }).ToListAsync();
+            return View(vm);
+        }
+        public async Task<IActionResult> AddBasket(int id)
+        {
+            var basketItems = JsonSerializer.Deserialize<List<BasketProductItemVM>>(Request.Cookies["basket"] ?? "[]");
+
+            var item = basketItems.FirstOrDefault(x => x.Id == id);
+            if (item == null)
+            {
+                item = new BasketProductItemVM(id);
+                basketItems.Add(item);
+            }
+            item.Count++;
+            Response.Cookies.Append("basket", JsonSerializer.Serialize(basketItems));
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> DeleteBasket(int id)
+        {
+            var basketItems = JsonSerializer.Deserialize<List<BasketProductItemVM>>(Request.Cookies["basket"] ?? "[]");
+
+            var item = basketItems!.FirstOrDefault(x => x.Id == id);
+            if (item!.Count > 1)
+            {
+                item.Count--;
+            }
+            else
+            {
+                basketItems!.Remove(item);
+            }
+
+            Response.Cookies.Append("basket", JsonSerializer.Serialize(basketItems));
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }
